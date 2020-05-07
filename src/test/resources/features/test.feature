@@ -21,6 +21,8 @@ Background:
   Scenario: Validate gender field
     Then I validate gender is "F" or "M"
 
-  Scenario: Validate response time in in limit
+  Scenario: Validate response time is in limit
     Then I validate response time is smaller 500 ms
 
+  Scenario: : Validate schema data types
+    Then I validate the schema data types

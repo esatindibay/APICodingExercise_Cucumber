@@ -1,0 +1,7 @@
+{
+  "idType" : "java.lang.Integer",
+  "nameType" : "java.lang.String",
+  "lastType" : "java.lang.String",
+  "ageType" : "java.lang.Integer",
+  "genderType" : "java.lang.String"
+}

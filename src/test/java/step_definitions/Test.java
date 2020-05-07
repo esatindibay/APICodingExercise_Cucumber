@@ -1,4 +1,6 @@
 package step_definitions;
+
+import io.cucumber.datatable.dependency.com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,6 +10,10 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
 import pojo.Person;
+import pojo.PersonDataType;
+
+import java.io.File;
+import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 
@@ -81,6 +87,19 @@ public class Test {
 
     }
 
+    @Then("I validate the schema data types")
+    public void i_validate_the_schema_data_types() {
+        PersonDataType personDataType = new PersonDataType(person);
+        ObjectMapper mapper = new ObjectMapper();
+        PersonDataType personDataType1=null;
+        String path = System.getProperty("user.dir");
+        try {
+            personDataType1= mapper.readValue(new File(path + "\\src\\test\\resources\\persondatatype.json"),PersonDataType.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Assert.assertEquals(personDataType1.toString(),personDataType.toString());
+    }
 
 
 }
