@@ -21,6 +21,6 @@ Background:
   Scenario: Validate gender field
     Then I validate gender is "F" or "M"
 
-  Scenario: Validate gender field
+  Scenario: Validate response time is in limit
     Then I validate response time is smaller 500 ms
 
