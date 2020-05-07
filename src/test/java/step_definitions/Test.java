@@ -1,5 +1,4 @@
 package step_definitions;
-
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -38,7 +37,9 @@ public class Test {
 
     @Then("I recevive valid HTTP response code {int}")
     public void i_recevive_valid_HTTP_response_code(Integer int1) {
+
         response.then().statusCode(int1);
+
     }
 
     @Then("I create Person object from HTTP response body")
@@ -83,3 +84,5 @@ public class Test {
 
 
 }
+
+
