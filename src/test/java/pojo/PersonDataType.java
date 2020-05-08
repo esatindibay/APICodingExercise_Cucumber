@@ -1,4 +1,7 @@
 package pojo;
+//  this pojo class is not for validate values but for validate structure of response json
+// for example: in json format, id should be integer, i do not focus what value the id is
+// i will check only if it is integer or not.
 
 public class PersonDataType
 {
@@ -29,6 +32,7 @@ public class PersonDataType
         getGenderType();
     }
     public String getAgeType() {
+
         ageType= ((Object)(person.getAge())).getClass().getTypeName();
         return ageType;
     }

@@ -1,6 +1,10 @@
 package pojo;
-
+// this pojo class is created for json --> java object conversion.
+// I need to have java object in order to validate values
+//this conversion is also known deserialization
 public class Person {
+    //in class, i define variables as private and later i create getter/setter as public
+    // this is one of the 4 basics of OOP concept, encapsulation.
     private int id;
     private String name;
     private  String last;
@@ -14,8 +18,10 @@ public class Person {
         this.age = age;
         this.gender = gender;
     }
-    public Person() {
 
+    // the empty constructor should be present for getting the process started.
+    public Person() {
+            //EMPTY CONSTRUCTOR
     }
 
     public int getId(){
@@ -58,6 +64,8 @@ public class Person {
         this.gender = gender;
     }
 
+    // overriding toString method from Object class is not mandatory but i would like to print my new created object
+    // in order to check whether i am on right track
     @Override
     public String toString() {
         return "{" +

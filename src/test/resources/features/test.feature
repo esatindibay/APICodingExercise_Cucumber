@@ -1,5 +1,7 @@
 Feature: Automation of JSON schema
-Background:
+
+#I have some steps which is executed in every scenario so i used BACKGROUND
+  Background:
   Given I set GET test api endpoint
   When Send GET HTTP request
   Then I recevive valid HTTP response code 200
